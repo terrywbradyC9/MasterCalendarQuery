@@ -1,9 +1,24 @@
 <!doctype html>
 <html>
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+  function writeLink(link, name) {
+      $("#data").append($("<div><a href='"+link+"'>"+name+"</a>"));
+  }
+  $(document).ready(function(){
+    var base = "https://spreadsheets.google.com/tq?key=0AtyXzGjX-VNNdDFNQlhTNFBOVWNKZEk3OVVydWZMS3c";
+    var basehtm = base + "&tqx=out:html";
+    var query = "&tq=" + encodeURIComponent("select A,B,C,D");
+    var tq = "&tq=";
+    writeLink(base+tq,"Get Spreadsheet");  
+    writeLink(basehtm+tq,"Get Spreadsheet as HTML");  
+    writeLink(basehtm+query,"Get Spreadsheet A-D");  
+  });
+</script>	
+</head>
 <body>
-<div>
-  Spreadsheet not yet publicly available
-  <a href="https://spreadsheets.google.com/tq?key=0AtyXzGjX-VNNdDFNQlhTNFBOVWNKZEk3OVVydWZMS3c&tq">Get Spreadsheet</a>
-</div>
+<h2>Spreadsheet not yet publicly available</h2> 
+<div id="data"/>
 </body>
-</html>
+</html> 
